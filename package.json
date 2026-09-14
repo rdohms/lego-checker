@@ -1,0 +1,97 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "lego-price-checker",
+  "title": "Lego Price Checker",
+  "description": "Check LEGO set prices across official store, online retailers, and secondary market with BRL conversion",
+  "icon": "extension-icon.png",
+  "author": "rdohms",
+  "platforms": [
+    "macOS",
+    "Windows"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "check-lego-price-per-set",
+      "title": "Check Lego Price Per Set",
+      "subtitle": "using a set number",
+      "description": "Gather data about global prices for lego set",
+      "mode": "view",
+      "preferences": [
+        {
+          "name": "rebrickableApiKey",
+          "title": "Rebrickable API Key",
+          "description": "Get a free key at rebrickable.com/api",
+          "type": "password",
+          "required": true
+        },
+        {
+          "name": "bricksetApiKey",
+          "title": "Brickset API Key",
+          "description": "Optional. Get a free key at brickset.com/api for LEGO store prices",
+          "type": "password",
+          "required": false
+        },
+        {
+          "name": "bricklinkConsumerKey",
+          "title": "BrickLink Consumer Key",
+          "description": "Optional. From your BrickLink developer console for secondary market prices",
+          "type": "password",
+          "required": false
+        },
+        {
+          "name": "bricklinkConsumerSecret",
+          "title": "BrickLink Consumer Secret",
+          "description": "Optional. From your BrickLink developer console",
+          "type": "password",
+          "required": false
+        },
+        {
+          "name": "bricklinkTokenKey",
+          "title": "BrickLink Token Key",
+          "description": "Optional. From your BrickLink developer console",
+          "type": "password",
+          "required": false
+        },
+        {
+          "name": "bricklinkTokenSecret",
+          "title": "BrickLink Token Secret",
+          "description": "Optional. From your BrickLink developer console",
+          "type": "password",
+          "required": false
+        },
+        {
+          "name": "serpapiKey",
+          "title": "SerpApi Key",
+          "description": "Get a free key at serpapi.com (250 searches/month)",
+          "type": "password",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.104.24",
+    "@raycast/utils": "^1.17.0",
+    "oauth-1.0a": "^2.2.6"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.0.4",
+    "@types/node": "22.19.17",
+    "@types/react": "19.0.10",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "prepublishOnly": "echo \"\\n\\nIt seems like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the \\`prepublishOnly\\` script and rerun \\`npm publish\\` again.\\nIf you wanted to publish it to the Raycast Store instead, use \\`npm run publish\\` instead.\\n\\n\" && exit 1",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
